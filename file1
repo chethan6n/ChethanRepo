@@ -1,0 +1,287 @@
+git-93.txt
+git init (to intilize the empty git repo)
+
+git config --global user.name "Polarapu Prasad"
+
+git config --global user.email "devopstraining2015@gmail.com"
+
+git config --list
+
+git config --global --unset user.name
+
+git config --global --unset user.email
+
+=========================================
+Touch, CAT, VI
+
+TOUCH
+=====
+touch file1
+ls
+
+touch file2 file3 file4
+ls
+
+==================================
+touch file1
+ls
+git status
+git add file1
+git status
+git commit -m "Smaple commit" file1
+git status
+git log
+git show
+git show cid
+
+---------------------------------
+touch file2 file3 file4 file5
+ls
+git status
+git add file2 file3 file4 file5
+or
+git add .
+or
+git add *
+or
+git add -A
+
+git status
+git commit -m "label"
+
+git status
+git log
+
+git show
+
+=======================
+create a new git repo  (git-hub)
+
+git clone https://github.com/polarapu/batch93.git
+ls
+cd batch93
+touch file1
+ls
+git status
+git add file1
+git status
+git commit -m "test commit" file1
+git status
+git log
+git push
+
+===============================
+git clone https://github.com/polarapu/batch93.git
+ls
+cd batch93
+touch prasad
+git status
+git add prasad
+git status
+git commit -m "sample commit by prasad"
+git status
+git push
+enter email-id & password
+
+Rejected
+--------
+git pull --rebase
+git push
+
+====================
+mkdir prasad-dir
+ls
+touch prasad-dir/f1
+git status
+git add .
+git commit -m "test dir"
+git push
+git pull --rebase
+git push
+
+========================
+git add file1  (workspace to staging)
+git reset head file1  (staging to workspace)
+
+git commit -m "label"  (staging to local)
+git reset --soft cid  (local to staging) n-1
+
+git reset --mixed cid (local to workspace)
+
+git reset --hard cid  (to dlete commit and commit files)
+
+git commit -m "label" file-name  (modified file directly we can commit)
+
+=============
+Branch
+-----
+git branch
+git branch release1
+git checkout release1
+git merge main
+
+git branch -d release1  (to delete branch on local)
+
+git push origin release1 (to upload branch into central repo)
+or
+git push path/of/c-repo release1
+
+git push origin -d release1  (to delete branch on central repo)
+
+Alias
+=====
+git status
+git config --global alias.s "status"
+git s
+
+git log
+git config --global alias.l "log"
+git l
+
+git config --list
+git config --global alias.cl "config --list"
+git cl
+
+git commit -m "sample-commit"
+git config --global alias.cmt "commit -m "sample-commit""
+git cmt
+
+git config --global --unset alias.l ( to remove alias)
+
+.gitignore
+-----------
+king1
+knig2
+
+
+touch king1
+touch king2
+
+git stataus
+
+=============================
+stash
+=====
+git stash list
+git stash save "stash1"
+git stash show stash@{x}
+git stash show -p stash@{x}
+
+POP - cut
+===
+git stash pop
+git stash pop stash@{x}
+
+Apply - copy
+=====
+git stash apply
+git stash apply stash@{x}
+
+Drop - delete
+====
+git stash drop
+git stash drop stash@{x}
+
+Tags
+====
+git tag
+git tag T-1.0
+git show T-1.0
+git tag -d T-1.0  (to delete tag on local)
+
+git tag T-1.0 cid
+
+git push origin T-1.0
+
+git push --tags  (to upload all tags)
+
+git checkout T-1.0  (to checkout tag)
+
+git push origin -d T-1.0  (to delete tag in central repo)
+git push origin -d T-2.0 T-3.0
+
+Cherry-pick
+===========
+git cherrypick cid
+
+Log's
+======
+git log
+git log -3
+git log --oneline
+git log --oneline -2
+git log --author=Prasad
+git log --author=Prasad -2
+git log --author=Prasad --oneline
+git log --author=Prasad --oneline -2
+
+git log --since=yy-mm-dd
+or
+git log --after=yy-mm-dd
+
+git log --until=yy-mm-dd
+or
+git log --before=yy-mm-dd
+
+git log --since=yy-mm-dd --until=yy-mm-dd
+or
+git log --after=yy-mm-dd --before=yy-mm-dd
+
+git log --since="yy-mm-dd 23:00" --until="yy-mm-dd 23:00"
+
+git log -- file file-name
+
+git log --grep label
+
+
+multi commit msg
+================
+git commit -m "label" -m "label2" -m "label3"
+
+revert
+======
+git revert cid
+
+amend
+=====
+git commit --amend -m "label"
+
+diff
+====
+git diff file1 file2
+git diff file1
+git diff branch1 branch2
+
+Branch
+======
+git checkout -b branch-name  (it will create a new branch and checkout)
+
+fork
+----
+
+merge vs rebase
+-----------------
+git merge branch1
+git rebase branch1
+git pull --rebase
+
+fetch
+=====
+git pull = git fetch + git merge
+
+git branch -r  (to list remote branches)
+git branch -a (to list all branches)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
